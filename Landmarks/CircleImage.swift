@@ -1,15 +1,16 @@
-//
-//  CircleImage.swift
-//  Landmarks
-//
-//  Created by Sree Abiram Mandava on 25/07/24.
-//
-
 import SwiftUI
 
 struct CircleImage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("turtlerock")
+            .resizable()            // Make the image resizable
+            .scaledToFill()         // Scale the image to fill the circle
+            .frame(width: 250, height: 250) // Set the frame size for the image
+            .clipShape(Circle())    // Clip the image to a circle shape
+            .overlay {
+                Circle().stroke(.white, lineWidth: 4)
+            }
+            .shadow(radius: 7)
     }
 }
 
